@@ -76,6 +76,7 @@ export default {
         height: 400px;
         color: #fff;
         background-position: center;
+        background-color: #837bd0;
     }
     .title {
         margin: 0 0 10px;
