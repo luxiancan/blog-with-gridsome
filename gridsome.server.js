@@ -12,13 +12,17 @@ module.exports = function (api) {
 
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
-    createPage({
-      path: '/posts',
-      component: './src/pages/Posts.vue'
-    })
-    createPage({
-      path: '/tags',
-      component: './src/pages/Tags.vue'
-    })
+    // createPage({
+    //   path: '/posts',
+    //   component: './src/pages/Posts.vue'
+    // })
+    // createPage({
+    //   path: '/tags',
+    //   component: './src/pages/Tags.vue'
+    // })
+    // createPage({
+    //   path: '/readme',
+    //   component: './src/pages/Readme.vue'
+    // })
   })
 }

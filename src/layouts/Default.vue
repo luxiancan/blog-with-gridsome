@@ -1,14 +1,16 @@
 <template>
     <div class="layout">
-        <header class="header" style="background-image: url('/images/header.jpg')">
-            <h1 class="title">Lxcan</h1>
-            <p class="desc">欢迎来到lxcan的个人博客。</p>
+        <header class="header" :style="{
+                backgroundImage: `url(${ GRIDSOME_API_URL + general.cover.url })`
+            }">
+            <h1 class="title">{{ general.title }}</h1>
+            <p class="desc">{{ general.subtitle }}</p>
             <div class="btn-group">
                 <el-button class="btn">
                     <a href="https://github.com/luxiancan" target="blank">GitHub主页</a>
                 </el-button>
                 <el-button class="btn">
-                    <a href="">博客源码</a>
+                    <a href="https://github.com/luxiancan/blog-with-gridsome" target="blank">博客源码</a>
                 </el-button>
             </div>
         </header>
@@ -20,14 +22,22 @@
                 <slot/>
             </div>
         </main>
-        
     </div>
 </template>
 
 <static-query>
 query {
-  metadata {
-    siteName
+  allStrapiGeneral {
+    edges {
+      node {
+        id
+        title
+        subtitle
+        cover {
+          url
+        }
+      }
+    }
   }
 }
 </static-query>
@@ -40,7 +50,14 @@ export default {
     components: {
         Sidebar
     },
-
+    computed: {
+        general() {
+            return this.$static.allStrapiGeneral.edges[0].node
+        }
+    },
+    // mounted () {
+    //     console.log(this.general);
+    // }
 }
 </script>
 

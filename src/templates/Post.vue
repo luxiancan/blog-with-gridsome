@@ -18,8 +18,8 @@
                 <span>创建时间：{{ post.created_at | date }}</span>&nbsp;&nbsp;
                 <span>更新时间：{{ post.updated_at | date }}</span>
             </div>
-            <div class="article-cover" v-if="post.cover">
-                <img :src="'http://localhost:1337' + post.cover.url" alt="">
+            <div class="article-cover" v-if="post.cover" :style="{ width: post.cover.width + 'px' }">
+                <img :src="GRIDSOME_API_URL + post.cover.url" alt="">
             </div>
             <div v-html="articleBody"></div>
         </article>
@@ -42,6 +42,7 @@ query ($id: Int) {
     }
     cover {
       url
+      width
     }
   }
 }
@@ -102,8 +103,8 @@ export default {
         color: #888;
     }
     .article-cover {
-        width: 100%;
-        height: 200px;
+        max-width: 100%;
+        /* height: 200px; */
     }
     .article-cover img {
         width: 100%;

@@ -17,4 +17,12 @@ export default function (Vue, { router, head, isClient }) {
   Vue.filter('date', (value, format = 'YYYY-MM-DD HH:mm:ss') => {
     return dayjs(value).format(format)
   })
+
+  Vue.mixin({
+    data () {
+      return {
+        GRIDSOME_API_URL: process.env.GRIDSOME_API_URL
+      }
+    }
+  })
 }

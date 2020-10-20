@@ -8,13 +8,21 @@ module.exports = {
   siteName: 'Gridsome',
   plugins: [
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'readme',
+        // path: './content/blog/**/*.md',
+        path: './README.md'
+      }
+    },
+    {
       use: '@gridsome/source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: process.env.GRIDSOME_API_URL,
         queryLimit: 1000, // Defaults to 100
         contentTypes: ['post', 'tag'], // StrapiPost
         // typeName: 'Strapi',
-        // singleTypes: ['impressum'],
+        singleTypes: ['general'],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         // loginData: {

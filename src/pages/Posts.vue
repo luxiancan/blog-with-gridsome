@@ -66,7 +66,7 @@ query ($page: Int) {
 export default {
     name: 'PostsPage',
     mounted () {
-
+        console.log(this.$page);
     },
     methods: {
         pageChange (page) {

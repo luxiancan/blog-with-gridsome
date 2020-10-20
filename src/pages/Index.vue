@@ -65,13 +65,21 @@ query {
 
 <script>
 export default {
-  name: 'IndexPage',
-  metaInfo: {
-    title: 'Hello, world!'
-  },
-  mounted () {
-      console.log(this.$page);
-  }
+    name: 'IndexPage',
+    metaInfo: {
+        title: 'Hello, world!'
+    },
+    mounted () {
+        console.log(this.$page);
+    },
+    methods: {
+        goDetails (id) {
+            this.$router.push(`/post/${id}`)
+        },
+        goTagPage (id) {
+            this.$router.push(`/tag/${id}`)
+        }
+    }
 }
 </script>
 
