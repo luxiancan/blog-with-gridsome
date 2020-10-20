@@ -67,6 +67,7 @@ export default {
     name: 'PostsPage',
     mounted () {
         console.log(this.$page);
+        console.log('PostsPage is opened!');
     },
     methods: {
         pageChange (page) {
