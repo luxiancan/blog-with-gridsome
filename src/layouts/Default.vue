@@ -12,6 +12,9 @@
                 <el-button class="btn">
                     <a href="https://github.com/luxiancan/blog-with-gridsome" target="blank">博客源码</a>
                 </el-button>
+                <el-button class="btn">
+                    <a href="http://8.129.38.87:1337/admin" target="blank">博客后台</a>
+                </el-button>
             </div>
         </header>
         <main class="main">
@@ -84,6 +87,13 @@ export default {
     }
     .btn-group {
         margin-top: 30px;
+    }
+    .btn-group .btn {
+        padding: 0;
+    }
+    .btn-group .btn a {
+        display: inline-block;
+        padding: 12px;
     }
     .main {
         position: relative;
